@@ -1,4 +1,4 @@
-package com.api.user_comics.dto;
+package com.api.user_comics.dto.Comic;
 
 import com.api.user_comics.model.Comic;
 
@@ -7,7 +7,7 @@ import java.util.List;
 
 public class ComicRespostaDTO {
 
-    private Long id_comic;
+    private Long id;
     private String titulo;
     private double preco;
     private String isbn;
@@ -17,7 +17,7 @@ public class ComicRespostaDTO {
 
     public static ComicRespostaDTO tranformaEmDTO(Comic comic){
 
-        return new ComicRespostaDTO(comic.getId_comic(),
+        return new ComicRespostaDTO(comic.getId(),
                                     comic.getTitulo(),comic.getPreco(),
                                     comic.getIsbn(),comic.getDescricao(),
                                     comic.getUrl_imagem(),
@@ -34,8 +34,8 @@ public class ComicRespostaDTO {
         return comicRespostaDTOList;
     }
 
-    private ComicRespostaDTO(Long id_comic, String titulo, double preco, String isbn, String descricao,String url_imagem, boolean desconto) {
-        this.id_comic = id_comic;
+    private ComicRespostaDTO(Long id, String titulo, double preco, String isbn, String descricao,String url_imagem, boolean desconto) {
+        this.id = id;
         this.titulo = titulo;
         this.preco = preco;
         this.isbn = isbn;
@@ -44,8 +44,8 @@ public class ComicRespostaDTO {
         this.url_imagem = url_imagem;
     }
 
-    public Long getId_comic() {
-        return id_comic;
+    public Long getId() {
+        return id;
     }
 
     public String getTitulo() {

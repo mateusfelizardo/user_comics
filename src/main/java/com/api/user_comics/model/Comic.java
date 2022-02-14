@@ -1,19 +1,19 @@
 package com.api.user_comics.model;
 
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.Table;
 
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "TB_Comic")
 public class Comic {
 
     @Id
-    private Long id_comic;
+    private Long id;
 
     @NotBlank
     private String titulo;
@@ -28,12 +28,12 @@ public class Comic {
 
     private String url_imagem;
 
-    public Long getId_comic() {
-        return id_comic;
+    public Long getId() {
+        return id;
     }
 
-    public Comic(Long id_comic, String titulo, double preco, String isbn, String descricao, String url_imagem) {
-        this.id_comic = id_comic;
+    public Comic(Long id, String titulo, double preco, String isbn, String descricao, String url_imagem) {
+        this.id = id;
         this.titulo = titulo;
         this.preco = preco;
         this.isbn = isbn;
@@ -49,8 +49,8 @@ public class Comic {
     }
 
 
-    public void setId_comic(Long id_comic) {
-        this.id_comic = id_comic;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getTitulo() {
@@ -92,4 +92,5 @@ public class Comic {
     public void setUrl_imagem(String url_imagem) {
         this.url_imagem = url_imagem;
     }
+
 }

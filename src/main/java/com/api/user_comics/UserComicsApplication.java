@@ -11,4 +11,5 @@ public class UserComicsApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(UserComicsApplication.class, args);
 	}
+
 }

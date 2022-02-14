@@ -27,12 +27,21 @@ public class Usuario {
     private String cpf;
 
 
-    @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "dd-MM-yyyy")
     private LocalDate data;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name="TB_Usuario_has_Comics")
     private List<Comic> comics ;
+
+    public Usuario(String nome, String email, String cpf, LocalDate data, List<Comic> comics) {
+        this.nome = nome;
+        this.email = email;
+        this.cpf = cpf;
+        this.data = data;
+        this.comics = comics;
+    }
+
+    public Usuario() {}
 
     public Long getId_usuario() {
         return id_usuario;
