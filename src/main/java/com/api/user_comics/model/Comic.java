@@ -45,7 +45,17 @@ public class Comic {
 
 
     public boolean isDesconto(String isbn){
-        return true;
+        try {
+            char lastChar = isbn.charAt(isbn.length() - 1);
+            int lastNum = Integer.parseInt(lastChar + "");
+            if(lastNum % 2 ==0){
+                return false;
+            }else {
+                return true;
+            }
+        }catch (Exception e){
+            return false;
+        }
     }
 
 

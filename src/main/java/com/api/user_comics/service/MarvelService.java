@@ -25,7 +25,8 @@ public class MarvelService {
 
     public MarvelComicResponse findById(long id){
         Long timeStamp = new Date().getTime();
-        return marvelConsumerFeign.findById(id,timeStamp, PUBLIC_KEY, buildHash(timeStamp));
+        return marvelConsumerFeign.findById(id, timeStamp, PUBLIC_KEY, buildHash(timeStamp));
+
     }
 
     private String buildHash(Long timeStamp){
